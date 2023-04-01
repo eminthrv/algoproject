@@ -23,7 +23,7 @@
 
 
 const x = 4.2069;
-console.log();
+console.log(x);
 /**
  * @param {number} n
  * @return {number}
@@ -41,14 +41,18 @@ console.log(factorial(2))
 
 
 var trailingZeroes = function (n) {
-  let fact = n;
+  let counter = 1
   let sum = 0;
-  while (fact >= 1){
-    sum = sum + 2
+  while (n >= 1){
+    let quotient = n / Math.pow(5, counter);
+    if(quotient < 1) break;
+    counter++;
+    sum = sum + ~~quotient;
   }
-  return counter
+  return sum
 };
 
-// console.log(trailingZeroes(4617))
+console.log(trailingZeroes(4617))
+console.log(trailingZeroes(5))
 // trailingZeroes(6);
 
