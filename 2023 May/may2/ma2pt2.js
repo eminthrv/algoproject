@@ -18,8 +18,9 @@ function toWeirdCase(string) {
   return result
 }
 
-toWeirdCase('String'); //=> returns "StRiNg"
-toWeirdCase('Weird string case'); //=> returns "WeIrD StRiNg CaSe"
-
-console.log(toWeirdCase('String'))
-console.log(toWeirdCase('Weird string case'))
+const performance = require('perf_hooks').performance
+const startTime = performance.now();
+const result = toWeirdCase("asdklfasdfjdaasdjds ksadjfklasfasdklfklasfjklafjklsjksdklsdjklf jksdflkajfldasfjkdajkldfjkasdjkdajkl");
+const endTime = performance.now()
+console.log("Result:", result);
+console.log("Time taken:", endTime - startTime, "milliseconds");
